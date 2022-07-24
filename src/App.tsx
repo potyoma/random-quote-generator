@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Row } from "reactstrap"
+import { Col, Row } from "reactstrap"
 import "./App.css"
 import { Quote } from "./components/quote"
 import { QuoteInfo } from "./components/quoteInfo"
@@ -31,22 +31,19 @@ const App = () => {
   const handleClick = () => updateColorsAndQuotes()
 
   return (
-    <Row
-      className="App align-items-center justify-content-center"
+    <div
+      className="d-flex align-items-center justify-content-center"
       style={{
         backgroundColor: color.hex,
-        width: "100vw",
+        width: "100%",
         height: "100%",
         position: "fixed",
       }}
     >
-      <Quote
-        id="quote-box"
-        color={color}
-        quote={quotes[ind]}
-        onClick={handleClick}
-      />
-    </Row>
+      <Row className="App">
+        <Quote color={color} quote={quotes[ind]} onClick={handleClick} />
+      </Row>
+    </div>
   )
 }
 

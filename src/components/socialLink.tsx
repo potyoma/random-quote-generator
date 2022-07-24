@@ -46,7 +46,7 @@ const SocialLink = ({ id, type, quote, color }: Props) => {
   }
 
   return (
-    <a id={id} href={genHref(type, quote)}>
+    <a id={id} target="_blank" href={genHref(type, quote)}>
       <FontAwesomeIcon
         style={{ color: color.hex }}
         size={"3x"}
